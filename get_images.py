@@ -23,7 +23,7 @@ def get_data(file_name_json):
                 titolo = item['title']
                 url_img = item['img']
                 brand = item['brand']
-                brand = brand.replace(' ', '+')
+                brand = brand.replace(' ', '-')
                 bag = {'index': index, 'brand': brand, 'titolo': titolo, 'url_img': url_img, 'material': materials}
                 data.append(bag)
             except:
