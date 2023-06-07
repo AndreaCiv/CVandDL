@@ -70,26 +70,26 @@ def save_dataset_list(dataset_list, path_where_save):
 
 if __name__ == "__main__":
 
-    path_dataset_en_cn_men = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_mytheresa/en-cn/men/"
-    path_dataset_en_cn_women = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_mytheresa/en-cn/women/"
+    path_dataset_en_cn_men = "/dataset_mytheresa/en-cn/men/"
+    path_dataset_en_cn_women = "/dataset_mytheresa/en-cn/women/"
 
-    path_dataset_en_it_men = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_mytheresa/en-it/men/"
-    path_dataset_en_it_women = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_mytheresa/en-it/women/"
+    path_dataset_en_it_men = "/dataset_mytheresa/en-it/men/"
+    path_dataset_en_it_women = "/dataset_mytheresa/en-it/women/"
 
-    path_dataset_en_jp_men = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_mytheresa/en-jp/men/"
-    path_dataset_en_jp_women = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_mytheresa/en-jp/women/"
+    path_dataset_en_jp_men = "/dataset_mytheresa/en-jp/men/"
+    path_dataset_en_jp_women = "/dataset_mytheresa/en-jp/women/"
 
-    path_dataset_en_kr_men = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_mytheresa/en-kr/men/"
-    path_dataset_en_kr_women = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_mytheresa/en-kr/women/"
+    path_dataset_en_kr_men = "/dataset_mytheresa/en-kr/men/"
+    path_dataset_en_kr_women = "/dataset_mytheresa/en-kr/women/"
 
-    path_dataset_en_us_men = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_mytheresa/en-us/men/"
-    path_dataset_en_us_women = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_mytheresa/en-us/women/"
+    path_dataset_en_us_men = "/dataset_mytheresa/en-us/men/"
+    path_dataset_en_us_women = "/dataset_mytheresa/en-us/women/"
 
     paths_men = [path_dataset_en_cn_men, path_dataset_en_it_men, path_dataset_en_jp_men, path_dataset_en_kr_men, path_dataset_en_us_men]
     paths_women = [path_dataset_en_cn_women, path_dataset_en_it_women, path_dataset_en_jp_women, path_dataset_en_kr_women, path_dataset_en_us_women]
 
-    path_dataset_men = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_classificazione/men.json"
-    path_dataset_women = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_classificazione/women.json"
+    path_dataset_men = "/dataset_classificazione/men.json"
+    path_dataset_women = "/dataset_classificazione/women.json"
 
     dataset_list = create_dataset(paths_women)
     save_dataset_list(dataset_list, path_dataset_women)

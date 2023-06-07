@@ -5,10 +5,10 @@ import json
 
 if __name__ == "__main__":
 
-    path_dataset_men = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_classificazione/men.json"
-    path_dataset_women = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_classificazione/women.json"
-    path_folder_men = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_classificazione/men/"
-    path_folder_women = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_classificazione/women/"
+    path_dataset_men = "/dataset_classificazione/men.json"
+    path_dataset_women = "/dataset_classificazione/women.json"
+    path_folder_men = "/dataset_classificazione/men/"
+    path_folder_women = "/dataset_classificazione/women/"
 
     with open(path_dataset_men, 'r') as file_men:
         list_men_images = json.load(file_men)
