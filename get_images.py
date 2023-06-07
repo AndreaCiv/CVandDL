@@ -46,7 +46,6 @@ def download_images(path_dataset, data):
             handler.write(img_data)
             handler.close()
 
-
 if __name__ == "__main__":
 
     file_name_en_cn_men = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_non_completo_cv/en-cn/men/en-cn_men_mytheresa.json"
@@ -80,6 +79,6 @@ if __name__ == "__main__":
     path_dataset_en_us_men = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_mytheresa/en-us/men/"
     path_dataset_en_us_women = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_mytheresa/en-us/women/"
 
-    data = get_data(file_name_en_us_men)
-    download_images(path_dataset_en_us_men, data)
+    data = get_data(file_name_en_us_women)
+    download_images(path_dataset_en_us_women, data)
 
