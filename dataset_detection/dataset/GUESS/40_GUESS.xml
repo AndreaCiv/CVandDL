@@ -1,0 +1,26 @@
+<annotation verified="no">
+	<folder>VOC2007</folder>
+	<filename>40_GUESS.jpg</filename>
+	
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>396</width>
+		<height>519</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>GUESS</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>259</xmin>
+			<ymin>462</ymin>
+			<xmax>359</xmax>
+			<ymax>506</ymax>
+		</bndbox>
+	</object>
+</annotation>

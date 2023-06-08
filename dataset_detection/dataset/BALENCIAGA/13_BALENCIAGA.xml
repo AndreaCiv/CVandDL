@@ -1,0 +1,26 @@
+<annotation verified="no">
+	<folder>VOC2007</folder>
+	<filename>13_BALENCIAGA.jpg</filename>
+	
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>373</width>
+		<height>487</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>BALENCIAGA</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>72</xmin>
+			<ymin>245</ymin>
+			<xmax>302</xmax>
+			<ymax>281</ymax>
+		</bndbox>
+	</object>
+</annotation>

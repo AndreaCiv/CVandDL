@@ -1,0 +1,26 @@
+<annotation>
+	<folder>VOC2007</folder>
+	<filename>31_CELINE.jpg</filename>
+	
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>521</width>
+		<height>367</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>CELINE</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>199</xmin>
+			<ymin>313</ymin>
+			<xmax>329</xmax>
+			<ymax>367</ymax>
+		</bndbox>
+	</object>
+</annotation>

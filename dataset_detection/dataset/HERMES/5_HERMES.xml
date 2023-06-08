@@ -1,0 +1,32 @@
+<annotation>
+<folder>training</folder>
+<filename>5_HERMES.jpg</filename>
+<source>
+<database>synthetic initialization</database>
+<annotation>PASCAL VOC2007</annotation>
+<image>synthetic</image>
+<flickrid>none</flickrid>
+</source>
+<owner>
+<flickrid>none</flickrid>
+<name>none</name>
+</owner>
+<size>
+<width>400</width>
+<height>400</height>
+<depth>3</depth>
+</size>
+<segmented>0</segmented>
+<object>
+<name>HERMES</name>
+<pose>Unspecified</pose>
+<truncated>0</truncated>
+<difficult>0</difficult>
+<bndbox>
+<xmin>86</xmin>
+<ymin>53</ymin>
+<xmax>288</xmax>
+<ymax>134</ymax>
+</bndbox>
+</object>
+</annotation>

@@ -1,0 +1,32 @@
+<annotation>
+<folder>training</folder>
+<filename>51_GUCCI.jpg</filename>
+<source>
+<database>synthetic initialization</database>
+<annotation>PASCAL VOC2007</annotation>
+<image>synthetic</image>
+<flickrid>none</flickrid>
+</source>
+<owner>
+<flickrid>none</flickrid>
+<name>none</name>
+</owner>
+<size>
+<width>640</width>
+<height>352</height>
+<depth>3</depth>
+</size>
+<segmented>0</segmented>
+<object>
+<name>GUCCI</name>
+<pose>Unspecified</pose>
+<truncated>0</truncated>
+<difficult>0</difficult>
+<bndbox>
+<xmin>268</xmin>
+<ymin>41</ymin>
+<xmax>392</xmax>
+<ymax>62</ymax>
+</bndbox>
+</object>
+</annotation>

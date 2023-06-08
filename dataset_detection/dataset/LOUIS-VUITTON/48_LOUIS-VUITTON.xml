@@ -1,0 +1,25 @@
+<annotation verified="no">
+	<folder>louis vuitton</folder>
+	<filename>48_LOUIS-VUITTON.jpg</filename>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>521</width>
+		<height>387</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>LOUIS-VUITTON</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>185</xmin>
+			<ymin>114</ymin>
+			<xmax>335</xmax>
+			<ymax>235</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,25 @@
+<annotation>
+	<folder>moncler</folder>
+	<filename>60_MONCLER.jpg</filename>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>492</width>
+		<height>356</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MONCLER</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>200</xmin>
+			<ymin>119</ymin>
+			<xmax>280</xmax>
+			<ymax>199</ymax>
+		</bndbox>
+	</object>
+</annotation>
