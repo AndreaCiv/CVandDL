@@ -1,0 +1,32 @@
+<annotation>
+<folder>training</folder>
+<filename>144_LOUIS-VUITTON.jpg</filename>
+<source>
+<database>synthetic initialization</database>
+<annotation>PASCAL VOC2007</annotation>
+<image>synthetic</image>
+<flickrid>none</flickrid>
+</source>
+<owner>
+<flickrid>none</flickrid>
+<name>none</name>
+</owner>
+<size>
+<width>2000</width>
+<height>2000</height>
+<depth>3</depth>
+</size>
+<segmented>0</segmented>
+<object>
+<name>LOUIS-VUITTON</name>
+<pose>Unspecified</pose>
+<truncated>0</truncated>
+<difficult>0</difficult>
+<bndbox>
+<xmin>486</xmin>
+<ymin>1149</ymin>
+<xmax>549</xmax>
+<ymax>1239</ymax>
+</bndbox>
+</object>
+</annotation>

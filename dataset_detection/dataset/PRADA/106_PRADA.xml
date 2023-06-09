@@ -1,0 +1,32 @@
+<annotation>
+<folder>training</folder>
+<filename>106_PRADA.jpg</filename>
+<source>
+<database>synthetic initialization</database>
+<annotation>PASCAL VOC2007</annotation>
+<image>synthetic</image>
+<flickrid>none</flickrid>
+</source>
+<owner>
+<flickrid>none</flickrid>
+<name>none</name>
+</owner>
+<size>
+<width>640</width>
+<height>373</height>
+<depth>3</depth>
+</size>
+<segmented>0</segmented>
+<object>
+<name>PRADA</name>
+<pose>Unspecified</pose>
+<truncated>0</truncated>
+<difficult>0</difficult>
+<bndbox>
+<xmin>78</xmin>
+<ymin>153</ymin>
+<xmax>379</xmax>
+<ymax>234</ymax>
+</bndbox>
+</object>
+</annotation>

@@ -1,0 +1,25 @@
+<annotation verified="no">
+	<folder>MARC BY MARC JACOBS</folder>
+	<filename>7_MARC-JACOBS.jpg</filename>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>480</width>
+		<height>387</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MARC-JACOBS</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>22</xmin>
+			<ymin>161</ymin>
+			<xmax>480</xmax>
+			<ymax>246</ymax>
+		</bndbox>
+	</object>
+</annotation>
