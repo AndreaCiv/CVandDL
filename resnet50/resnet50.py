@@ -18,22 +18,22 @@ def train_and_test_model(X_train, X_valid, X_test, Y_train, Y_valid, Y_test, lis
           "\nbatch size = " + str(batch_size)
           )
 
-    mobilenet_v3 = tf.keras.applications.MobileNetV3Large(
-        input_shape=(224, 224, 3),
-        include_top=False,
+    resnet = tf.keras.applications.resnet50.ResNet50(
+        input_shape=(224, 224, 3),  # Making the image into 3 Channel
         weights='imagenet',
+        include_top=False,
         pooling='avg'
     )
 
     if layers_to_not_freeze == 0:
-        for layer in mobilenet_v3.layers:
+        for layer in resnet.layers:
             layer.trainable = False
     else:
-        for layer in mobilenet_v3.layers[:-layers_to_not_freeze]:
+        for layer in resnet.layers[:-layers_to_not_freeze]:
             layer.trainable = False
 
     model = tf.keras.Sequential()
-    model.add(mobilenet_v3)
+    model.add(resnet)
     model.add(tf.keras.layers.Flatten())
     model.add(tf.keras.layers.Dense(1024, activation='relu'))
     model.add(tf.keras.layers.Dropout(dropout))
@@ -45,7 +45,7 @@ def train_and_test_model(X_train, X_valid, X_test, Y_train, Y_valid, Y_test, lis
     # definizione checkpoint per salvare pesi durante l'addestramento
     # ATTENZIONE AL NOME DEL FILE
     checkpoint = ModelCheckpoint(
-        os.path.join(weights_directory, "weights_mobilenet_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + ".h5"),
+        os.path.join(weights_directory, "weights_resnet_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + ".h5"),
         verbose=1, monitor='val_loss', save_best_only=True)
 
     # compilazione del modello
@@ -62,7 +62,7 @@ def train_and_test_model(X_train, X_valid, X_test, Y_train, Y_valid, Y_test, lis
     # salvataggio della history dell'addestramento
     # ATTENZIONE AL NOME DEL FILE
     history_ = pd.DataFrame(history.history)
-    with open(os.path.join(results_directory, "history_mobilenet_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + ".json"),
+    with open(os.path.join(results_directory, "history_resnet_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + ".json"),
               "w") as json_file:
         history_.to_json(json_file)
 
@@ -77,7 +77,7 @@ def train_and_test_model(X_train, X_valid, X_test, Y_train, Y_valid, Y_test, lis
         Y_pred_binary.append(array_prediction)
 
     classification_report = sklearn.metrics.classification_report(Y_test, np.asarray(Y_pred_binary), target_names=list_possible_materials)
-    text_file = open(os.path.join(test_directory, "test_mobilenet_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + ".txt"), "w")
+    text_file = open(os.path.join(test_directory, "test_resnet_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + ".txt"), "w")
     n = text_file.write(classification_report)
     text_file.close()
 
@@ -86,15 +86,15 @@ if __name__ == "__main__":
     input_shape = (224, 224)
     number_of_epochs = 50
 
-    weights_directory = "/Users/andreacivitarese/PycharmProjects/CVandDL/mobilenet_v3/weights"
-    results_directory = "/Users/andreacivitarese/PycharmProjects/CVandDL/mobilenet_v3/results"
-    test_directory = "/Users/andreacivitarese/PycharmProjects/CVandDL/mobilenet_v3/test"
+    weights_directory = "/Users/andreacivitarese/PycharmProjects/CVandDL/resnet50/weights"
+    results_directory = "/Users/andreacivitarese/PycharmProjects/CVandDL/resnet50/results"
+    test_directory = "/Users/andreacivitarese/PycharmProjects/CVandDL/resnet50/test"
     path_dataset_men = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_classificazione/men/"
     path_dataset_women = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_classificazione/women/"
 
     batch_sizes_to_try = [16, 32]  # si potrebbe provare anche con 8
     learning_rates_to_try = [0.0001, 0.001, 0.005]
-    layers_not_freeze_to_try = [0, 20, 40]
+    layers_not_freeze_to_try = [0, 15, 30]
     dropouts_to_try = [0.5]  # si potrebbe provare anche 0.3
 
 
@@ -111,6 +111,8 @@ if __name__ == "__main__":
     for file_path in imgs_list:
         img = cv2.imread(file_path)
         img = cv2.resize(img, input_shape)
+        # preprocessing
+        img = tf.keras.applications.resnet50.preprocess_input(img)
         imgs_array.append(img)
 
 
