@@ -77,8 +77,9 @@ def train_and_test_model(X_train, X_valid, X_test, Y_train, Y_valid, Y_test, lis
         Y_pred_binary.append(array_prediction)
 
     classification_report = sklearn.metrics.classification_report(Y_test, np.asarray(Y_pred_binary), target_names=list_possible_materials)
+    accuracy_score = "\naccuracy = " + str(sklearn.metrics.accuracy_score(Y_test, Y_pred_binary))
     text_file = open(os.path.join(test_directory, "test_mobilenet_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + ".txt"), "w")
-    n = text_file.write(classification_report)
+    n = text_file.write(classification_report + accuracy_score)
     text_file.close()
 
 
