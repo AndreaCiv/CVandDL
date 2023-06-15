@@ -19,22 +19,22 @@ def train_and_test_model(X_train, X_valid, X_test, Y_train, Y_valid, Y_test, lis
           "\npooling = " + pooling
           )
 
-    mobilenet_v3 = tf.keras.applications.MobileNetV3Large(
-        input_shape=(224, 224, 3),
-        include_top=False,
+    inception = tf.keras.applications.inception_v3.InceptionV3(
+        input_shape=(224, 224, 3),  # Making the image into 3 Channel
         weights='imagenet',
+        include_top=False,
         pooling=pooling
     )
 
     if layers_to_not_freeze == 0:
-        for layer in mobilenet_v3.layers:
+        for layer in inception.layers:
             layer.trainable = False
     else:
-        for layer in mobilenet_v3.layers[:-layers_to_not_freeze]:
+        for layer in inception.layers[:-layers_to_not_freeze]:
             layer.trainable = False
 
     model = tf.keras.Sequential()
-    model.add(mobilenet_v3)
+    model.add(inception)
     model.add(tf.keras.layers.Flatten())
     model.add(tf.keras.layers.Dense(1024, activation='relu'))
     model.add(tf.keras.layers.Dropout(dropout))
@@ -46,7 +46,7 @@ def train_and_test_model(X_train, X_valid, X_test, Y_train, Y_valid, Y_test, lis
     # definizione checkpoint per salvare pesi durante l'addestramento
     # ATTENZIONE AL NOME DEL FILE
     checkpoint = ModelCheckpoint(
-        os.path.join(weights_directory, "weights_mobilenet_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + "_pooling_" + pooling + ".h5"),
+        os.path.join(weights_directory, "weights_inception_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + "_pooling_" + pooling + ".h5"),
         verbose=1, monitor='val_loss', save_best_only=True)
 
     # compilazione del modello
@@ -63,7 +63,7 @@ def train_and_test_model(X_train, X_valid, X_test, Y_train, Y_valid, Y_test, lis
     # salvataggio della history dell'addestramento
     # ATTENZIONE AL NOME DEL FILE
     history_ = pd.DataFrame(history.history)
-    with open(os.path.join(results_directory, "history_mobilenet_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + "_pooling_" + pooling + ".json"),
+    with open(os.path.join(results_directory, "history_inception_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + "_pooling_" + pooling + ".json"),
               "w") as json_file:
         history_.to_json(json_file)
 
@@ -79,7 +79,7 @@ def train_and_test_model(X_train, X_valid, X_test, Y_train, Y_valid, Y_test, lis
 
     classification_report = sklearn.metrics.classification_report(Y_test, np.asarray(Y_pred_binary), target_names=list_possible_materials)
     accuracy_score = "\naccuracy = " + str(sklearn.metrics.accuracy_score(Y_test, Y_pred_binary))
-    text_file = open(os.path.join(test_directory, "test_mobilenet_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + "_pooling_" + pooling + ".txt"), "w")
+    text_file = open(os.path.join(test_directory, "test_inception_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + "_pooling_" + pooling + ".txt"), "w")
     n = text_file.write(classification_report + accuracy_score)
     text_file.close()
 
@@ -88,9 +88,9 @@ if __name__ == "__main__":
     input_shape = (224, 224)
     number_of_epochs = 50
 
-    weights_directory = "/home/vrai/mobilenet_v3/weights"
-    results_directory = "/home/vrai/mobilenet_v3/results"
-    test_directory = "/home/vrai/mobilenet_v3/test"
+    weights_directory = "/home/vrai/inception/weights"
+    results_directory = "/home/vrai/inception/results"
+    test_directory = "/home/vrai/inception/test"
     path_dataset_men = "/home/vrai/dataset_classificazione/men/"
     path_dataset_women = "/home/vrai/dataset_classificazione/women/"
     path_dataset_augmented_men = "/home/vrai/dataset_classificazione/augmented_men/"
@@ -98,7 +98,7 @@ if __name__ == "__main__":
 
     batch_sizes_to_try = [16, 32]  # si potrebbe provare anche con 8
     learning_rates_to_try = [0.0001, 0.001, 0.005]
-    layers_not_freeze_to_try = [0, 20, 40]
+    layers_not_freeze_to_try = [0, 40, 80]
     dropouts_to_try = [0.5]  # si potrebbe provare anche 0.3
     poolings_to_try = ['avg', 'max']
 
@@ -124,6 +124,8 @@ if __name__ == "__main__":
     for file_path in imgs_list:
         img = cv2.imread(file_path)
         img = cv2.resize(img, input_shape)
+        # preprocessing
+        img = tf.keras.applications.resnet50.preprocess_input(img)
         imgs_array.append(img)
 
     # caricamento immagini aumentate
@@ -134,6 +136,7 @@ if __name__ == "__main__":
         # preprocessing
         img = tf.keras.applications.vgg16.preprocess_input(img)
         imgs_array_augmented.append(img)
+
 
     # creazione delle etichette delle immagini
     possible_materials = set()
@@ -199,7 +202,7 @@ if __name__ == "__main__":
     images_array_augmented, labels_array_augmented = sklearn.utils.shuffle(imgs_array_augmented, labels_augmented, random_state=15)
     Xtrain, X_test, Ytrain, Y_test = train_test_split(images_array, labels_array, test_size=0.10, random_state=15, stratify=labels_array)
     X_train, X_valid, Y_train, Y_valid = train_test_split(Xtrain, Ytrain, test_size=0.2, random_state=15, stratify=Ytrain)
-    X_train = np.asarray(X_train + images_array_augmented)
+    X_train = np.asarray(X_train + imgs_array_augmented)
     X_valid = np.asarray(X_valid)
     X_test = np.asarray(X_test)
     Y_train = np.asarray(Y_train + labels_array_augmented)
@@ -212,6 +215,6 @@ if __name__ == "__main__":
                 for dropout in dropouts_to_try:
                     for pooling in poolings_to_try:
                         train_and_test_model(X_train=X_train, X_valid=X_valid, X_test=X_test, Y_train=Y_train, Y_valid=Y_valid,
-                                             Y_test=Y_test, list_possible_materials=list_possible_materials, layers_to_not_freeze=layers_to_not_freeze,
-                                             dropout=dropout, learning_rate=learning_rate, batch_size=batch_size, number_of_epochs=number_of_epochs, pooling=pooling,
-                                             weights_directory=weights_directory, results_directory=results_directory, test_directory=test_directory)
+                                         Y_test=Y_test, list_possible_materials=list_possible_materials, layers_to_not_freeze=layers_to_not_freeze,
+                                         dropout=dropout, learning_rate=learning_rate, batch_size=batch_size, number_of_epochs=number_of_epochs, pooling=pooling,
+                                         weights_directory=weights_directory, results_directory=results_directory, test_directory=test_directory)
