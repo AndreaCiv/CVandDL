@@ -1,13 +1,13 @@
 <annotation>
 	<folder>VOC2007</folder>
-	<filename>75_CELINE.jpg</filename>
+	<filename>34_CELINE.jpg</filename>
 	
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>514</width>
-		<height>374</height>
+		<width>518</width>
+		<height>372</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>276</xmin>
-			<ymin>59</ymin>
-			<xmax>397</xmax>
-			<ymax>91</ymax>
+			<xmin>216</xmin>
+			<ymin>221</ymin>
+			<xmax>377</xmax>
+			<ymax>252</ymax>
 		</bndbox>
 	</object>
 </annotation>

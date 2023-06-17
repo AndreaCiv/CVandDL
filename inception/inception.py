@@ -96,7 +96,7 @@ if __name__ == "__main__":
     path_dataset_augmented_men = "/home/vrai/dataset_classificazione/augmented_men/"
     path_dataset_augmented_women = "/home/vrai/dataset_classificazione/augmented_women/"
 
-    batch_sizes_to_try = [16, 32]  # si potrebbe provare anche con 8
+    batch_sizes_to_try = [32]  # si potrebbe provare anche con 8
     learning_rates_to_try = [0.0001, 0.001, 0.005]
     layers_not_freeze_to_try = [0, 40, 80]
     dropouts_to_try = [0.5]  # si potrebbe provare anche 0.3
