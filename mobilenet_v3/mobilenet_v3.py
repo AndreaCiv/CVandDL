@@ -7,7 +7,10 @@ import cv2
 from sklearn.model_selection import train_test_split
 from tensorflow.python.keras.callbacks import ModelCheckpoint
 import pandas as pd
+from codecarbon import track_emissions
 
+
+@track_emissions()
 def train_and_test_model(X_train, X_valid, X_test, Y_train, Y_valid, Y_test, list_possible_materials, layers_to_not_freeze,
                          dropout, learning_rate, batch_size, number_of_epochs, pooling, weights_directory, results_directory, test_directory):
     # definizione del modello di rete neurale
@@ -88,13 +91,13 @@ if __name__ == "__main__":
     input_shape = (224, 224)
     number_of_epochs = 50
 
-    weights_directory = "/home/vrai/mobilenet_v3/weights"
-    results_directory = "/home/vrai/mobilenet_v3/results"
-    test_directory = "/home/vrai/mobilenet_v3/test"
-    path_dataset_men = "/home/vrai/dataset_classificazione/men/"
-    path_dataset_women = "/home/vrai/dataset_classificazione/women/"
-    path_dataset_augmented_men = "/home/vrai/dataset_classificazione/augmented_men/"
-    path_dataset_augmented_women = "/home/vrai/dataset_classificazione/augmented_women/"
+    weights_directory = "/Users/andreacivitarese/PycharmProjects/CVandDL/classification/weights"
+    results_directory = "/Users/andreacivitarese/PycharmProjects/CVandDL/classification/results"
+    test_directory = "/Users/andreacivitarese/PycharmProjects/CVandDL/classification/test"
+    path_dataset_men = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_classificazione/men"
+    path_dataset_women = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_classificazione/women"
+    path_dataset_augmented_men = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_classificazione/augmented_men"
+    path_dataset_augmented_women = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_classificazione/augmented_women"
 
     batch_sizes_to_try = [16, 32]  # si potrebbe provare anche con 8
     learning_rates_to_try = [0.0001, 0.001, 0.005]
