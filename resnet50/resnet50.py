@@ -7,7 +7,9 @@ import cv2
 from sklearn.model_selection import train_test_split
 from tensorflow.python.keras.callbacks import ModelCheckpoint
 import pandas as pd
+from codecarbon import track_emissions
 
+@track_emissions()
 def train_and_test_model(X_train, X_valid, X_test, Y_train, Y_valid, Y_test, list_possible_materials, layers_to_not_freeze,
                          dropout, learning_rate, batch_size, number_of_epochs, pooling, weights_directory, results_directory, test_directory):
     # definizione del modello di rete neurale
@@ -96,11 +98,11 @@ if __name__ == "__main__":
     path_dataset_augmented_men = "/home/vrai/dataset_classificazione/augmented_men/"
     path_dataset_augmented_women = "/home/vrai/dataset_classificazione/augmented_women/"
 
-    batch_sizes_to_try = [16, 32]  # si potrebbe provare anche con 8
-    learning_rates_to_try = [0.0001, 0.001, 0.005]
-    layers_not_freeze_to_try = [0, 15, 30]
+    batch_sizes_to_try = [32]  # si potrebbe provare anche con 8
+    learning_rates_to_try = [0.001]
+    layers_not_freeze_to_try = [15]
     dropouts_to_try = [0.5]  # si potrebbe provare anche 0.3
-    poolings_to_try = ['avg', 'max']
+    poolings_to_try = ['max']
 
 
 

@@ -91,19 +91,19 @@ if __name__ == "__main__":
     input_shape = (224, 224)
     number_of_epochs = 50
 
-    weights_directory = "/Users/andreacivitarese/PycharmProjects/CVandDL/classification/weights"
-    results_directory = "/Users/andreacivitarese/PycharmProjects/CVandDL/classification/results"
-    test_directory = "/Users/andreacivitarese/PycharmProjects/CVandDL/classification/test"
-    path_dataset_men = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_classificazione/men"
-    path_dataset_women = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_classificazione/women"
-    path_dataset_augmented_men = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_classificazione/augmented_men"
-    path_dataset_augmented_women = "/Users/andreacivitarese/PycharmProjects/CVandDL/dataset_classificazione/augmented_women"
+    weights_directory = "/home/vrai/mobilenet_v3/weights"
+    results_directory = "/home/vrai/mobilenet_v3/results"
+    test_directory = "/home/vrai/mobilenet_v3/test"
+    path_dataset_men = "/home/vrai/dataset_classificazione/men/"
+    path_dataset_women = "/home/vrai/dataset_classificazione/women/"
+    path_dataset_augmented_men = "/home/vrai/dataset_classificazione/augmented_men/"
+    path_dataset_augmented_women = "/home/vrai/dataset_classificazione/augmented_women/"
 
-    batch_sizes_to_try = [16, 32]  # si potrebbe provare anche con 8
-    learning_rates_to_try = [0.0001, 0.001, 0.005]
-    layers_not_freeze_to_try = [0, 20, 40]
+    batch_sizes_to_try = [32]  # si potrebbe provare anche con 8
+    learning_rates_to_try = [0.001]
+    layers_not_freeze_to_try = [0]
     dropouts_to_try = [0.5]  # si potrebbe provare anche 0.3
-    poolings_to_try = ['avg', 'max']
+    poolings_to_try = ['avg']
 
 
 

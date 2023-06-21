@@ -13,7 +13,7 @@ from codecarbon import track_emissions
 def train_and_test_model(X_train, X_valid, X_test, Y_train, Y_valid, Y_test, list_possible_materials, layers_to_not_freeze,
                          dropout, learning_rate, batch_size, number_of_epochs, pooling, weights_directory, results_directory, test_directory):
     # definizione del modello di rete neurale
-    print("Modello con parametri:"+
+    print("Modello con parametri:" +
           "\nlayers to not freeze = " + str(layers_to_not_freeze) +
           "\ndropout = " + str(dropout) +
           "\nlearning rate = " + str(learning_rate) +
@@ -21,22 +21,22 @@ def train_and_test_model(X_train, X_valid, X_test, Y_train, Y_valid, Y_test, lis
           "\npooling = " + pooling
           )
 
-    vgg = tf.keras.applications.vgg16.VGG16(
+    resnet = tf.keras.applications.resnet50.ResNet50(
+        input_shape=(224, 224, 3),  # Making the image into 3 Channel
         weights='imagenet',
         include_top=False,
-        input_shape=(224, 224, 3),
         pooling=pooling
     )
 
     if layers_to_not_freeze == 0:
-        for layer in vgg.layers:
+        for layer in resnet.layers:
             layer.trainable = False
     else:
-        for layer in vgg.layers[:-layers_to_not_freeze]:
+        for layer in resnet.layers[:-layers_to_not_freeze]:
             layer.trainable = False
 
     model = tf.keras.Sequential()
-    model.add(vgg)
+    model.add(resnet)
     model.add(tf.keras.layers.Flatten())
     model.add(tf.keras.layers.Dense(1024, activation='relu'))
     model.add(tf.keras.layers.Dropout(dropout))
@@ -48,13 +48,16 @@ def train_and_test_model(X_train, X_valid, X_test, Y_train, Y_valid, Y_test, lis
     # definizione checkpoint per salvare pesi durante l'addestramento
     # ATTENZIONE AL NOME DEL FILE
     checkpoint = ModelCheckpoint(
-        os.path.join(weights_directory, "weights_vgg16_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + "_pooling_" + pooling + ".h5"),
+        os.path.join(weights_directory, "weights_resnet_continued_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + "_pooling_" + pooling + ".h5"),
         verbose=1, monitor='val_loss', save_best_only=True)
 
     # compilazione del modello
     # ATTENZIONE AL LEARNING RATE
     model.compile(loss="categorical_crossentropy", metrics="Recall",
                   optimizer=tf.keras.optimizers.SGD(learning_rate=learning_rate, momentum=0.9))
+
+    # load weights to continue training
+    model.load_weights("/home/vrai/resnet50/weights/weights_resnet_notfrozen_15_lr_0.001_dropout_0.5_batch_size_32_pooling_max.h5")
 
     # addestramento del modello
     # ATTENZIONE AL BATCH SIZE
@@ -65,7 +68,7 @@ def train_and_test_model(X_train, X_valid, X_test, Y_train, Y_valid, Y_test, lis
     # salvataggio della history dell'addestramento
     # ATTENZIONE AL NOME DEL FILE
     history_ = pd.DataFrame(history.history)
-    with open(os.path.join(results_directory, "history_vgg16_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + "_pooling_" + pooling + ".json"),
+    with open(os.path.join(results_directory, "history_resnet_continued_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + "_pooling_" + pooling + ".json"),
               "w") as json_file:
         history_.to_json(json_file)
 
@@ -81,7 +84,7 @@ def train_and_test_model(X_train, X_valid, X_test, Y_train, Y_valid, Y_test, lis
 
     classification_report = sklearn.metrics.classification_report(Y_test, np.asarray(Y_pred_binary), target_names=list_possible_materials)
     accuracy_score = "\naccuracy = " + str(sklearn.metrics.accuracy_score(Y_test, Y_pred_binary))
-    text_file = open(os.path.join(test_directory, "test_vgg16_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + "_pooling_" + pooling + ".txt"), "w")
+    text_file = open(os.path.join(test_directory, "test_resnet_continued_notfrozen_" + str(layers_to_not_freeze) + "_lr_" + str(learning_rate) + "_dropout_" + str(dropout) + "_batch_size_" + str(batch_size) + "_pooling_" + pooling + ".txt"), "w")
     n = text_file.write(classification_report + accuracy_score)
     text_file.close()
 
@@ -90,19 +93,21 @@ if __name__ == "__main__":
     input_shape = (224, 224)
     number_of_epochs = 50
 
-    weights_directory = "/home/vrai/vgg16/weights"
-    results_directory = "/home/vrai/vgg16/results"
-    test_directory = "/home/vrai/vgg16/test"
+    weights_directory = "/home/vrai/resnet50/weights"
+    results_directory = "/home/vrai/resnet50/results"
+    test_directory = "/home/vrai/resnet50/test"
     path_dataset_men = "/home/vrai/dataset_classificazione/men/"
     path_dataset_women = "/home/vrai/dataset_classificazione/women/"
     path_dataset_augmented_men = "/home/vrai/dataset_classificazione/augmented_men/"
     path_dataset_augmented_women = "/home/vrai/dataset_classificazione/augmented_women/"
 
-    batch_sizes_to_try = [16]  # si potrebbe provare anche con 8
-    learning_rates_to_try = [0.0001]
-    layers_not_freeze_to_try = [6]
+    batch_sizes_to_try = [32]  # si potrebbe provare anche con 8
+    learning_rates_to_try = [0.001]
+    layers_not_freeze_to_try = [15]
     dropouts_to_try = [0.5]  # si potrebbe provare anche 0.3
-    poolings_to_try = ['avg']
+    poolings_to_try = ['max']
+
+
 
     # caricamento immagini per train, validation e test
     imgs_list_men = [os.path.join(path_dataset_men, img_name) for img_name in sorted(os.listdir(path_dataset_men))]
@@ -111,8 +116,10 @@ if __name__ == "__main__":
     imgs_list = imgs_list_men + imgs_list_women
 
     # caricamento dei files augmentati
-    imgs_list_augmented_men = [os.path.join(path_dataset_augmented_men, img_name) for img_name in sorted(os.listdir(path_dataset_augmented_men))]
-    imgs_list_augmented_women = [os.path.join(path_dataset_augmented_women, img_name) for img_name in sorted(os.listdir(path_dataset_augmented_women))]
+    imgs_list_augmented_men = [os.path.join(path_dataset_augmented_men, img_name) for img_name in
+                               sorted(os.listdir(path_dataset_augmented_men))]
+    imgs_list_augmented_women = [os.path.join(path_dataset_augmented_women, img_name) for img_name in
+                                 sorted(os.listdir(path_dataset_augmented_women))]
     imgs_list_augmented = imgs_list_augmented_men + imgs_list_augmented_women
 
     print("Numero totale immagini: " + str(len(imgs_list) + len(imgs_list_augmented)))
@@ -123,10 +130,10 @@ if __name__ == "__main__":
         img = cv2.imread(file_path)
         img = cv2.resize(img, input_shape)
         # preprocessing
-        img = tf.keras.applications.vgg16.preprocess_input(img)
+        img = tf.keras.applications.resnet50.preprocess_input(img)
         imgs_array.append(img)
 
-    #caricamento immagini aumentate
+    # caricamento immagini aumentate
     imgs_array_augmented = []
     for file_path in imgs_list_augmented:
         img = cv2.imread(file_path)
@@ -181,7 +188,6 @@ if __name__ == "__main__":
             supports_for_dataset[label] = supports_for_dataset[label] + 1
         except:
             supports_for_dataset[label] = 1
-
     for vector in labels_augmented:
         label = ''
         for index, number in enumerate(vector):
@@ -201,11 +207,9 @@ if __name__ == "__main__":
     images_array_augmented, labels_array_augmented = sklearn.utils.shuffle(imgs_array_augmented, labels_augmented, random_state=15)
     Xtrain, X_test, Ytrain, Y_test = train_test_split(images_array, labels_array, test_size=0.10, random_state=15, stratify=labels_array)
     X_train, X_valid, Y_train, Y_valid = train_test_split(Xtrain, Ytrain, test_size=0.2, random_state=15, stratify=Ytrain)
-
     X_train = np.asarray(X_train + imgs_array_augmented)
     X_valid = np.asarray(X_valid)
     X_test = np.asarray(X_test)
-
     Y_train = np.asarray(Y_train + labels_array_augmented)
     Y_valid = np.asarray(Y_valid)
     Y_test = np.asarray(Y_test)
