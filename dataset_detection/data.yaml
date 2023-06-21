@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 24
+names: ['BALENCIAGA', 'BURBERRY', 'CELINE', 'DIOR', 'DKNY', 'ELISABETTA-FRANCHI', 'FENDI', 'FERRAGAMO', 'GIVENCHY', 'GOYARD', 'GUCCI', 'GUESS', 'LIU-JO', 'LOEWE', 'LOUIS-VUITTON', 'MARC-JACOBS', 'MCM', 'MICHAEL-KORS', 'MONCLER', 'PRADA', 'TORY-BURCH', 'VALENTINO', 'VERSACE', 'YVES-SAINT-LAURENT']
+
+roboflow:
+  workspace: cvanddl
+  project: detection-bag-logo
+  version: 3
+  license: MIT
+  url: https://universe.roboflow.com/cvanddl/detection-bag-logo/dataset/3
