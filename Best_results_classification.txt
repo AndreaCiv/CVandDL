@@ -1,0 +1,122 @@
+BEST RESULTS
+
+INCEPTION
+Test 7
+not_frozen: 0, learning_rate: 0.001, dropout: 0.5, batch_size: 32, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+     leather       0.44      0.52      0.47        33
+      fabric       0.61      0.71      0.66        35
+      canvas       0.00      0.00      0.00         2
+calf-leather       0.59      0.73      0.65        41
+   polyester       0.00      0.00      0.00         2
+lamb-leather       0.86      0.50      0.63        12
+      raffia       0.00      0.00      0.00         2
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.00      0.00      0.00         4
+ cow-leather       1.00      0.11      0.20         9
+
+   micro avg       0.57      0.57      0.57       141
+   macro avg       0.45      0.36      0.36       141
+weighted avg       0.57      0.57      0.54       141
+ samples avg       0.57      0.57      0.57       141
+
+accuracy = 0.5673758865248227
+---------------------------------------------------------------------------------
+
+RESNET50
+Test 20
+not_frozen: 15, learning_rate: 0.001, dropout: 0.5, batch_size: 32, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.78      0.58      0.67        12
+calf-leather       0.64      0.88      0.74        41
+      canvas       1.00      0.50      0.67         2
+goat-leather       0.50      1.00      0.67         1
+ cow-leather       0.60      0.33      0.43         9
+      fabric       0.80      0.91      0.85        35
+      raffia       1.00      0.50      0.67         2
+   polyester       0.00      0.00      0.00         2
+     leather       0.65      0.45      0.54        33
+polyurethane       0.33      0.25      0.29         4
+
+   micro avg       0.69      0.69      0.69       141
+   macro avg       0.63      0.54      0.55       141
+weighted avg       0.68      0.69      0.67       141
+ samples avg       0.69      0.69      0.69       141
+
+accuracy = 0.6879432624113475
+
+
+RISULTATI DEL TEST CON TRAINING PER 100 EPOCHE
+              precision    recall  f1-score   support
+
+goat-leather       1.00      1.00      1.00         1
+      raffia       1.00      1.00      1.00         2
+polyurethane       0.00      0.00      0.00         4
+calf-leather       0.79      0.76      0.77        41
+     leather       0.68      0.70      0.69        33
+lamb-leather       0.67      0.67      0.67        12
+      fabric       0.67      0.86      0.75        35
+ cow-leather       0.75      0.33      0.46         9
+      canvas       0.00      0.00      0.00         2
+   polyester       0.33      0.50      0.40         2
+
+   micro avg       0.70      0.70      0.70       141
+   macro avg       0.59      0.58      0.57       141
+weighted avg       0.69      0.70      0.69       141
+ samples avg       0.70      0.70      0.70       141
+
+accuracy = 0.7021276595744681
+---------------------------------------------------------------------------------
+
+MOBILENET
+Test 7
+not_frozen: 0, learning_rate: 0.001, dropout: 0.5, batch_size: 32, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.71      0.83      0.77        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.62      0.73      0.67        33
+      fabric       0.63      0.83      0.72        35
+calf-leather       0.62      0.56      0.59        41
+      canvas       0.00      0.00      0.00         2
+      raffia       1.00      0.50      0.67         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.62      0.62      0.62       141
+   macro avg       0.46      0.45      0.44       141
+weighted avg       0.56      0.62      0.59       141
+ samples avg       0.62      0.62      0.62       141
+
+accuracy = 0.624113475177305
+---------------------------------------------------------------------------------
+
+VGG 16
+Test 20
+not_frozen: 6, learning_rate: 0.0001, dropout: 0.5, batch_size: 16, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+     leather       0.56      0.73      0.63        33
+polyurethane       0.00      0.00      0.00         4
+lamb-leather       0.60      0.25      0.35        12
+goat-leather       0.00      0.00      0.00         1
+      fabric       0.81      0.83      0.82        35
+      raffia       0.40      1.00      0.57         2
+calf-leather       0.68      0.73      0.71        41
+   polyester       0.00      0.00      0.00         2
+ cow-leather       0.75      0.33      0.46         9
+      canvas       1.00      0.50      0.67         2
+
+   micro avg       0.65      0.65      0.65       141
+   macro avg       0.48      0.44      0.42       141
+weighted avg       0.65      0.65      0.63       141
+ samples avg       0.65      0.65      0.65       141
+
+accuracy = 0.6524822695035462
