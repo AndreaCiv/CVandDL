@@ -1,0 +1,864 @@
+Test 1
+not_frozen: 0, learning_rate: 0.0001, dropout: 0.5, batch_size: 16, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       1.00      0.33      0.50        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.44      0.45      0.45        33
+      fabric       0.61      0.71      0.66        35
+calf-leather       0.44      0.63      0.52        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       0.00      0.00      0.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.50      0.50      0.50       141
+   macro avg       0.25      0.21      0.21       141
+weighted avg       0.47      0.50      0.46       141
+ samples avg       0.50      0.50      0.50       141
+
+accuracy = 0.49645390070921985
+
+
+Test 2
+not_frozen: 0, learning_rate: 0.0001, dropout: 0.5, batch_size: 16, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.73      0.67      0.70        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.48      0.33      0.39        33
+      fabric       0.59      0.57      0.58        35
+calf-leather       0.47      0.68      0.55        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       1.00      0.11      0.20         9
+goat-leather       0.33      1.00      0.50         1
+polyurethane       0.17      0.25      0.20         4
+
+   micro avg       0.50      0.50      0.50       141
+   macro avg       0.38      0.36      0.31       141
+weighted avg       0.53      0.50      0.48       141
+ samples avg       0.50      0.50      0.50       141
+
+accuracy = 0.49645390070921985
+
+
+Test 3
+not_frozen: 0, learning_rate: 0.0001, dropout: 0.5, batch_size: 32, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.36      0.33      0.35        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.48      0.36      0.41        33
+      fabric       0.60      0.71      0.65        35
+calf-leather       0.45      0.68      0.54        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       0.00      0.00      0.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.49      0.49      0.49       141
+   macro avg       0.19      0.21      0.20       141
+weighted avg       0.42      0.49      0.45       141
+ samples avg       0.49      0.49      0.49       141
+
+accuracy = 0.48936170212765956
+
+
+Test 4
+not_frozen: 0, learning_rate: 0.0001, dropout: 0.5, batch_size: 32, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.64      0.58      0.61        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.52      0.42      0.47        33
+      fabric       0.57      0.66      0.61        35
+calf-leather       0.51      0.68      0.58        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       0.50      1.00      0.67         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.52      0.52      0.52       141
+   macro avg       0.27      0.33      0.29       141
+weighted avg       0.47      0.52      0.49       141
+ samples avg       0.52      0.52      0.52       141
+
+accuracy = 0.5177304964539007
+
+
+Test 5
+not_frozen: 0, learning_rate: 0.001, dropout: 0.5, batch_size: 16, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.78      0.58      0.67        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.52      0.67      0.59        33
+      fabric       0.66      0.71      0.68        35
+calf-leather       0.62      0.63      0.63        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       1.00      0.11      0.20         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.14      0.25      0.18         4
+
+   micro avg       0.59      0.59      0.59       141
+   macro avg       0.47      0.40      0.39       141
+weighted avg       0.61      0.59      0.57       141
+ samples avg       0.59      0.59      0.59       141
+
+accuracy = 0.5886524822695035
+
+
+Test 6
+not_frozen: 0, learning_rate: 0.001, dropout: 0.5, batch_size: 16, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.00      0.00      0.00        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.25      0.06      0.10        33
+      fabric       0.66      0.54      0.59        35
+calf-leather       0.37      0.90      0.52        41
+      canvas       0.00      0.00      0.00         2
+      raffia       1.00      1.00      1.00         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       0.50      1.00      0.67         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.43      0.43      0.43       141
+   macro avg       0.28      0.35      0.29       141
+weighted avg       0.35      0.43      0.34       141
+ samples avg       0.43      0.43      0.43       141
+
+accuracy = 0.4326241134751773
+
+
+Test 7
+not_frozen: 0, learning_rate: 0.001, dropout: 0.5, batch_size: 32, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.71      0.83      0.77        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.62      0.73      0.67        33
+      fabric       0.63      0.83      0.72        35
+calf-leather       0.62      0.56      0.59        41
+      canvas       0.00      0.00      0.00         2
+      raffia       1.00      0.50      0.67         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.62      0.62      0.62       141
+   macro avg       0.46      0.45      0.44       141
+weighted avg       0.56      0.62      0.59       141
+ samples avg       0.62      0.62      0.62       141
+
+accuracy = 0.624113475177305
+
+
+Test 8
+not_frozen: 0, learning_rate: 0.001, dropout: 0.5, batch_size: 32, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.88      0.58      0.70        12
+   polyester       0.50      0.50      0.50         2
+     leather       0.39      0.36      0.38        33
+      fabric       0.61      0.49      0.54        35
+calf-leather       0.46      0.73      0.57        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       0.50      1.00      0.67         1
+polyurethane       0.33      0.25      0.29         4
+
+   micro avg       0.49      0.49      0.49       141
+   macro avg       0.37      0.39      0.36       141
+weighted avg       0.47      0.49      0.47       141
+ samples avg       0.49      0.49      0.49       141
+
+accuracy = 0.48936170212765956
+
+
+Test 9
+not_frozen: 0, learning_rate: 0.005, dropout: 0.5, batch_size: 16, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.89      0.67      0.76        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.71      0.36      0.48        33
+      fabric       0.56      0.77      0.65        35
+calf-leather       0.45      0.71      0.55        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.55      0.55      0.55       141
+   macro avg       0.36      0.35      0.34       141
+weighted avg       0.52      0.55      0.51       141
+ samples avg       0.55      0.55      0.55       141
+
+accuracy = 0.5460992907801419
+
+
+Test 10
+not_frozen: 0, learning_rate: 0.005, dropout: 0.5, batch_size: 16, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.00      0.00      0.00        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.00      0.00      0.00        33
+      fabric       0.00      0.00      0.00        35
+calf-leather       0.29      1.00      0.45        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       0.00      0.00      0.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.29      0.29      0.29       141
+   macro avg       0.03      0.10      0.05       141
+weighted avg       0.08      0.29      0.13       141
+ samples avg       0.29      0.29      0.29       141
+
+accuracy = 0.2907801418439716
+
+
+Test 11
+not_frozen: 0, learning_rate: 0.005, dropout: 0.5, batch_size: 32, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.80      0.33      0.47        12
+   polyester       0.20      0.50      0.29         2
+     leather       0.44      0.58      0.50        33
+      fabric       0.79      0.66      0.72        35
+calf-leather       0.48      0.63      0.55        41
+      canvas       0.00      0.00      0.00         2
+      raffia       1.00      0.50      0.67         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.50      0.25      0.33         4
+
+   micro avg       0.54      0.54      0.54       141
+   macro avg       0.52      0.45      0.45       141
+weighted avg       0.55      0.54      0.52       141
+ samples avg       0.54      0.54      0.54       141
+
+accuracy = 0.5390070921985816
+
+
+Test 12
+not_frozen: 0, learning_rate: 0.005, dropout: 0.5, batch_size: 32, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.00      0.00      0.00        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.00      0.00      0.00        33
+      fabric       0.00      0.00      0.00        35
+calf-leather       0.29      1.00      0.45        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       0.00      0.00      0.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.29      0.29      0.29       141
+   macro avg       0.03      0.10      0.05       141
+weighted avg       0.08      0.29      0.13       141
+ samples avg       0.29      0.29      0.29       141
+
+accuracy = 0.2907801418439716
+
+
+Test 13
+not_frozen: 20, learning_rate: 0.0001, dropout: 0.5, batch_size: 16, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.78      0.58      0.67        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.53      0.52      0.52        33
+      fabric       0.65      0.74      0.69        35
+calf-leather       0.53      0.71      0.60        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       0.00      0.00      0.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.56      0.56      0.56       141
+   macro avg       0.25      0.25      0.25       141
+weighted avg       0.51      0.56      0.53       141
+ samples avg       0.56      0.56      0.56       141
+
+accuracy = 0.5602836879432624
+
+
+Test 14
+not_frozen: 20, learning_rate: 0.0001, dropout: 0.5, batch_size: 16, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.70      0.58      0.64        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.59      0.52      0.55        33
+      fabric       0.66      0.77      0.71        35
+calf-leather       0.51      0.63      0.57        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.60      0.33      0.43         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.57      0.57      0.57       141
+   macro avg       0.41      0.38      0.39       141
+weighted avg       0.55      0.57      0.56       141
+ samples avg       0.57      0.57      0.57       141
+
+accuracy = 0.574468085106383
+
+
+Test 15
+not_frozen: 20, learning_rate: 0.0001, dropout: 0.5, batch_size: 32, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       1.00      0.08      0.15        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.36      0.27      0.31        33
+      fabric       0.60      0.83      0.70        35
+calf-leather       0.44      0.71      0.54        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       0.00      0.00      0.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.48      0.48      0.48       141
+   macro avg       0.24      0.19      0.17       141
+weighted avg       0.45      0.48      0.42       141
+ samples avg       0.48      0.48      0.48       141
+
+accuracy = 0.48226950354609927
+
+
+Test 16
+not_frozen: 20, learning_rate: 0.0001, dropout: 0.5, batch_size: 32, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.75      0.75      0.75        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.51      0.61      0.56        33
+      fabric       0.67      0.69      0.68        35
+calf-leather       0.61      0.66      0.64        41
+      canvas       0.00      0.00      0.00         2
+      raffia       1.00      0.50      0.67         2
+ cow-leather       0.50      0.11      0.18         9
+goat-leather       0.50      1.00      0.67         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.59      0.59      0.59       141
+   macro avg       0.45      0.43      0.41       141
+weighted avg       0.58      0.59      0.57       141
+ samples avg       0.59      0.59      0.59       141
+
+accuracy = 0.5886524822695035
+
+
+Test 17
+not_frozen: 20, learning_rate: 0.001, dropout: 0.5, batch_size: 16, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.55      0.50      0.52        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.42      0.58      0.49        33
+      fabric       0.69      0.63      0.66        35
+calf-leather       0.53      0.49      0.51        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.60      0.33      0.43         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.20      0.25      0.22         4
+
+   micro avg       0.51      0.51      0.51       141
+   macro avg       0.40      0.38      0.38       141
+weighted avg       0.52      0.51      0.51       141
+ samples avg       0.51      0.51      0.51       141
+
+accuracy = 0.5106382978723404
+
+
+Test 18
+not_frozen: 20, learning_rate: 0.001, dropout: 0.5, batch_size: 16, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.77      0.83      0.80        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.59      0.61      0.60        33
+      fabric       0.58      0.80      0.67        35
+calf-leather       0.66      0.56      0.61        41
+      canvas       0.00      0.00      0.00         2
+      raffia       1.00      0.50      0.67         2
+ cow-leather       0.60      0.33      0.43         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.61      0.61      0.61       141
+   macro avg       0.52      0.46      0.48       141
+weighted avg       0.60      0.61      0.60       141
+ samples avg       0.61      0.61      0.61       141
+
+accuracy = 0.6099290780141844
+
+
+Test 19
+not_frozen: 20, learning_rate: 0.001, dropout: 0.5, batch_size: 32, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.58      0.58      0.58        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.52      0.67      0.59        33
+      fabric       0.70      0.74      0.72        35
+calf-leather       0.54      0.46      0.50        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.50      0.44      0.47         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.56      0.56      0.56       141
+   macro avg       0.39      0.39      0.39       141
+weighted avg       0.54      0.56      0.55       141
+ samples avg       0.56      0.56      0.56       141
+
+accuracy = 0.5602836879432624
+
+
+Test 20
+not_frozen: 20, learning_rate: 0.001, dropout: 0.5, batch_size: 32, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.73      0.67      0.70        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.49      0.52      0.50        33
+      fabric       0.63      0.77      0.69        35
+calf-leather       0.58      0.54      0.56        41
+      canvas       0.00      0.00      0.00         2
+      raffia       1.00      0.50      0.67         2
+ cow-leather       0.80      0.44      0.57         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.57      0.57      0.57       141
+   macro avg       0.52      0.44      0.47       141
+weighted avg       0.57      0.57      0.56       141
+ samples avg       0.57      0.57      0.57       141
+
+accuracy = 0.5673758865248227
+
+
+Test 21
+not_frozen: 20, learning_rate: 0.005, dropout: 0.5, batch_size: 16, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.69      0.75      0.72        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.58      0.55      0.56        33
+      fabric       0.72      0.80      0.76        35
+calf-leather       0.62      0.63      0.63        41
+      canvas       0.00      0.00      0.00         2
+      raffia       1.00      0.50      0.67         2
+ cow-leather       0.50      0.33      0.40         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.20      0.25      0.22         4
+
+   micro avg       0.62      0.62      0.62       141
+   macro avg       0.53      0.48      0.50       141
+weighted avg       0.61      0.62      0.61       141
+ samples avg       0.62      0.62      0.62       141
+
+accuracy = 0.6170212765957447
+
+
+Test 22
+not_frozen: 20, learning_rate: 0.005, dropout: 0.5, batch_size: 16, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.00      0.00      0.00        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.00      0.00      0.00        33
+      fabric       0.69      0.69      0.69        35
+calf-leather       0.38      0.98      0.55        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       0.50      1.00      0.67         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.46      0.46      0.46       141
+   macro avg       0.16      0.27      0.19       141
+weighted avg       0.29      0.46      0.34       141
+ samples avg       0.46      0.46      0.46       141
+
+accuracy = 0.46099290780141844
+
+
+Test 23
+not_frozen: 20, learning_rate: 0.005, dropout: 0.5, batch_size: 32, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.64      0.58      0.61        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.56      0.70      0.62        33
+      fabric       0.62      0.71      0.67        35
+calf-leather       0.57      0.49      0.53        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.67      0.44      0.53         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.25      0.25      0.25         4
+
+   micro avg       0.57      0.57      0.57       141
+   macro avg       0.43      0.42      0.42       141
+weighted avg       0.56      0.57      0.56       141
+ samples avg       0.57      0.57      0.57       141
+
+accuracy = 0.574468085106383
+
+
+Test 24
+not_frozen: 20, learning_rate: 0.005, dropout: 0.5, batch_size: 32, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       1.00      0.17      0.29        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.19      0.21      0.20        33
+      fabric       0.64      0.77      0.70        35
+calf-leather       0.46      0.63      0.53        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.50      0.50      0.50         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.45      0.45      0.45       141
+   macro avg       0.38      0.33      0.32       141
+weighted avg       0.44      0.45      0.41       141
+ samples avg       0.45      0.45      0.45       141
+
+accuracy = 0.45390070921985815
+
+
+Test 25
+not_frozen: 40, learning_rate: 0.0001, dropout: 0.5, batch_size: 16, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.89      0.67      0.76        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.52      0.48      0.50        33
+      fabric       0.66      0.77      0.71        35
+calf-leather       0.54      0.76      0.63        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.59      0.59      0.59       141
+   macro avg       0.36      0.37      0.36       141
+weighted avg       0.53      0.59      0.55       141
+ samples avg       0.59      0.59      0.59       141
+
+accuracy = 0.5886524822695035
+
+
+Test 26
+not_frozen: 40, learning_rate: 0.0001, dropout: 0.5, batch_size: 16, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.88      0.58      0.70        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.53      0.61      0.56        33
+      fabric       0.66      0.71      0.68        35
+calf-leather       0.58      0.68      0.63        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       1.00      0.22      0.36         9
+goat-leather       0.50      1.00      0.67         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.59      0.59      0.59       141
+   macro avg       0.41      0.38      0.36       141
+weighted avg       0.60      0.59      0.57       141
+ samples avg       0.59      0.59      0.59       141
+
+accuracy = 0.5886524822695035
+
+
+Test 27
+not_frozen: 40, learning_rate: 0.0001, dropout: 0.5, batch_size: 32, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.40      0.33      0.36        12
+   polyester       1.00      0.50      0.67         2
+     leather       0.43      0.39      0.41        33
+      fabric       0.66      0.77      0.71        35
+calf-leather       0.47      0.66      0.55        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.52      0.52      0.52       141
+   macro avg       0.40      0.37      0.37       141
+weighted avg       0.46      0.52      0.48       141
+ samples avg       0.52      0.52      0.52       141
+
+accuracy = 0.5177304964539007
+
+
+Test 28
+not_frozen: 40, learning_rate: 0.0001, dropout: 0.5, batch_size: 32, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.80      0.67      0.73        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.48      0.64      0.55        33
+      fabric       0.63      0.69      0.66        35
+calf-leather       0.58      0.61      0.60        41
+      canvas       0.00      0.00      0.00         2
+      raffia       1.00      0.50      0.67         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.57      0.57      0.57       141
+   macro avg       0.45      0.41      0.42       141
+weighted avg       0.53      0.57      0.54       141
+ samples avg       0.57      0.57      0.57       141
+
+accuracy = 0.5673758865248227
+
+
+Test 29
+not_frozen: 40, learning_rate: 0.001, dropout: 0.5, batch_size: 16, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.57      0.67      0.62        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.58      0.64      0.61        33
+      fabric       0.70      0.74      0.72        35
+calf-leather       0.57      0.56      0.57        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.50      0.33      0.40         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.33      0.25      0.29         4
+
+   micro avg       0.59      0.59      0.59       141
+   macro avg       0.43      0.42      0.42       141
+weighted avg       0.58      0.59      0.58       141
+ samples avg       0.59      0.59      0.59       141
+
+accuracy = 0.5886524822695035
+
+
+Test 30
+not_frozen: 40, learning_rate: 0.001, dropout: 0.5, batch_size: 16, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.67      0.67      0.67        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.41      0.42      0.42        33
+      fabric       0.72      0.60      0.66        35
+calf-leather       0.52      0.63      0.57        41
+      canvas       1.00      0.50      0.67         2
+      raffia       0.33      0.50      0.40         2
+ cow-leather       0.50      0.33      0.40         9
+goat-leather       0.50      1.00      0.67         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.53      0.53      0.53       141
+   macro avg       0.47      0.47      0.44       141
+weighted avg       0.54      0.53      0.53       141
+ samples avg       0.53      0.53      0.53       141
+
+accuracy = 0.5319148936170213
+
+
+Test 31
+not_frozen: 40, learning_rate: 0.001, dropout: 0.5, batch_size: 32, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.64      0.58      0.61        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.48      0.67      0.56        33
+      fabric       0.77      0.77      0.77        35
+calf-leather       0.53      0.44      0.48        41
+      canvas       0.00      0.00      0.00         2
+      raffia       1.00      0.50      0.67         2
+ cow-leather       0.50      0.33      0.40         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.56      0.56      0.56       141
+   macro avg       0.49      0.43      0.45       141
+weighted avg       0.56      0.56      0.56       141
+ samples avg       0.56      0.56      0.56       141
+
+accuracy = 0.5602836879432624
+
+
+Test 32
+not_frozen: 40, learning_rate: 0.001, dropout: 0.5, batch_size: 32, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.67      0.50      0.57        12
+   polyester       0.14      0.50      0.22         2
+     leather       0.49      0.58      0.53        33
+      fabric       0.77      0.66      0.71        35
+calf-leather       0.49      0.56      0.52        41
+      canvas       0.00      0.00      0.00         2
+      raffia       1.00      1.00      1.00         2
+ cow-leather       1.00      0.33      0.50         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.55      0.55      0.55       141
+   macro avg       0.56      0.51      0.51       141
+weighted avg       0.59      0.55      0.56       141
+ samples avg       0.55      0.55      0.55       141
+
+accuracy = 0.5531914893617021
+
+
+Test 33
+not_frozen: 40, learning_rate: 0.005, dropout: 0.5, batch_size: 16, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.75      0.50      0.60        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.52      0.52      0.52        33
+      fabric       0.71      0.63      0.67        35
+calf-leather       0.52      0.56      0.54        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.27      0.33      0.30         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.25      0.50      0.33         4
+
+   micro avg       0.52      0.52      0.52       141
+   macro avg       0.40      0.40      0.40       141
+weighted avg       0.54      0.52      0.53       141
+ samples avg       0.52      0.52      0.52       141
+
+accuracy = 0.524822695035461
+
+
+Test 34
+not_frozen: 40, learning_rate: 0.005, dropout: 0.5, batch_size: 16, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.00      0.00      0.00        12
+   polyester       0.33      0.50      0.40         2
+     leather       0.36      0.64      0.46        33
+      fabric       0.68      0.80      0.74        35
+calf-leather       0.70      0.56      0.62        41
+      canvas       0.00      0.00      0.00         2
+      raffia       1.00      1.00      1.00         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       0.50      1.00      0.67         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.54      0.54      0.54       141
+   macro avg       0.36      0.45      0.39       141
+weighted avg       0.48      0.54      0.50       141
+ samples avg       0.54      0.54      0.54       141
+
+accuracy = 0.5390070921985816
+
+
+Test 35
+not_frozen: 40, learning_rate: 0.005, dropout: 0.5, batch_size: 32, pooling: avg, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.64      0.58      0.61        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.53      0.64      0.58        33
+      fabric       0.76      0.80      0.78        35
+calf-leather       0.66      0.46      0.54        41
+      canvas       0.00      0.00      0.00         2
+      raffia       1.00      1.00      1.00         2
+ cow-leather       0.33      0.56      0.42         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.20      0.25      0.22         4
+
+   micro avg       0.60      0.60      0.60       141
+   macro avg       0.51      0.53      0.51       141
+weighted avg       0.60      0.60      0.59       141
+ samples avg       0.60      0.60      0.60       141
+
+accuracy = 0.5957446808510638
+
+
+Test 36
+not_frozen: 40, learning_rate: 0.005, dropout: 0.5, batch_size: 32, pooling: max, 
+Risultati:
+              precision    recall  f1-score   support
+
+lamb-leather       0.00      0.00      0.00        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.35      0.73      0.48        33
+      fabric       0.67      0.63      0.65        35
+calf-leather       0.64      0.34      0.44        41
+      canvas       0.25      0.50      0.33         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       1.00      1.00      1.00         1
+polyurethane       0.17      0.50      0.25         4
+
+   micro avg       0.45      0.45      0.45       141
+   macro avg       0.31      0.37      0.32       141
+weighted avg       0.45      0.45      0.42       141
+ samples avg       0.45      0.45      0.45       141
+
+accuracy = 0.45390070921985815
+
+

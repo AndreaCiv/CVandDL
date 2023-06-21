@@ -1,0 +1,2 @@
+timestamp,experiment_id,project_name,duration,emissions,energy_consumed,country_name,country_iso_code,region,on_cloud,cloud_provider,cloud_region
+2023-06-21T10:41:01,a0dd9d24-ad61-43f0-92c3-3daeae2ad5a2,codecarbon,196.37128472328186,2.303826231968749e-06,3.4872943574687707e-06,Italy,ITA,the marches,N,,
