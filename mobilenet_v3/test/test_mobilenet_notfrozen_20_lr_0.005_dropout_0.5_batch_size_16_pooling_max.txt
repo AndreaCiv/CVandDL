@@ -1,0 +1,19 @@
+              precision    recall  f1-score   support
+
+lamb-leather       0.00      0.00      0.00        12
+   polyester       0.00      0.00      0.00         2
+     leather       0.00      0.00      0.00        33
+      fabric       0.69      0.69      0.69        35
+calf-leather       0.38      0.98      0.55        41
+      canvas       0.00      0.00      0.00         2
+      raffia       0.00      0.00      0.00         2
+ cow-leather       0.00      0.00      0.00         9
+goat-leather       0.50      1.00      0.67         1
+polyurethane       0.00      0.00      0.00         4
+
+   micro avg       0.46      0.46      0.46       141
+   macro avg       0.16      0.27      0.19       141
+weighted avg       0.29      0.46      0.34       141
+ samples avg       0.46      0.46      0.46       141
+
+accuracy = 0.46099290780141844
