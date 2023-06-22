@@ -136,7 +136,7 @@ if __name__ == "__main__":
         img = cv2.imread(file_path)
         img = cv2.resize(img, input_shape)
         # preprocessing
-        img = tf.keras.applications.vgg16.preprocess_input(img)
+        img = tf.keras.applications.resnet50.preprocess_input(img)
         imgs_array_augmented.append(img)
 
 
